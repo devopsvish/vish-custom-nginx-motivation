@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vish Motivation Zone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a0c4ff 0%, #e0efff 100%); /* Light blue gradient */
+            color: #4b6a92; /* Light blue text */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background 0.5s ease-in-out;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            color: #4b6a92; /* Light blue text */
+            border-radius: 22px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px 30px;
+            flex-grow: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #a9cbe6; /* Lighter blue border */
+            box-sizing: border-box;
+            position: relative;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 10px solid #a9cbe6; /* Lighter blue border */
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 2.5em; /* Reduced font size by 2 points */
+            font-weight: 600;
+            color: #2d3e50;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        #quote {
+            font-size: 1.4em; /* Reduced font size by 2 points */
+            font-style: italic;
+            margin: 30px 0;
+            color: #5f758c; /* Lighter blue-grey color */
+            line-height: 1.5;
+        }
+
+        /* Footer Styling */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            color: #4b6a92; /* Light blue text */
+            padding: 15px 20px;
+            font-size: 0.9em;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+            height: auto;
+        }
+
+        footer .footer-section {
+            display: flex;
+            align-items: center;
+            margin-right: 10px; /* Reduced right margin */
+            gap: 3px; /* Reduced gap between label and value */
+        }
+
+        footer .footer-section:last-child {
+            margin-right: 0;
+        }
+
+        footer .footer-section i {
+            margin-right: 5px; /* Reduced margin for icons */
+            font-size: 1.2em;
+        }
+
+        footer .footer-section span {
+            color: #4b6a92; /* Light blue text */
+            margin-left: 0; /* Removed left margin */
+        }
+
+        footer .time {
+            font-size: 1em;
+            color: #4b6a92; /* Light blue text */
+            margin-top: 5px;
+            width: 150px;
+            text-align: center;
+        }
+
+        /* IST Time Bold */
+        .bold-ist-time {
+            font-weight: bold;
+        }
+
+        /* Domain Name Styling */
+        .domain-name {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #2d3e50;
+            font-weight: 600;
+            text-align: center;
+            padding: 10px;
+            background-color: #a0c4ff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Side Label Styling */
+        .side-label {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            font-size: 0.8em;
+            background-color: #6fa3f9; /* Lighter blue background */
+            color: white;
+            padding: 5px 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 20px;
+            box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Bold Labels Styling */
+        .bold-label {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            footer {
+                flex-direction: column;
+                align-items: center;
+                font-size: 1em;
+                padding: 20px;
+            }
+
+            footer .footer-section {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Side Label -->
+    <div class="side-label">Vish - DevOps Engineer</div>
+
+    <div class="container">
+        <h1>Welcome to Vish Motivation Zone</h1>
+        <div id="quote"></div>
+    </div>
+
+    <!-- Footer with Location, IP, IST Time, and UTC Time -->
+    <footer>
+        <div class="footer-section">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="bold-label">Location:</span> <span id="location">Loading Location...</span>
+        </div>
+        <div class="footer-section">
+            <i class="fas fa-laptop"></i>
+            <span class="bold-label">IP Address:</span> <span id="ip">Loading IP...</span>
+        </div>
+        <div class="footer-section">
+            <span class="bold-ist-time">IST Time:</span> <span id="time">Loading Time...</span>
+        </div>
+        <div class="footer-section">
+            <span class="bold-ist-time">UTC Time:</span> <span id="utc-time">Loading Time...</span>
+        </div>
+    </footer>
+
+    <!-- Domain Name Section -->
+    <div class="domain-name" id="domain-name">
+        Domain Name: <span id="dynamic-domain">Loading Domain...</span>
+    </div>
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        // Fetch IP address and location
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ip = data.ip;
+                document.getElementById('ip').textContent = ` ${ip}`;
+
+                // Fetch location details using IP
+                return fetch(`https://ipwhois.app/json/${ip}`);
+            })
+            .then(response => response.json())
+            .then(data => {
+                const location = `${data.city}, ${data.region}, ${data.country}`;
+                document.getElementById('location').textContent = ` ${location}`;
+            })
+            .catch(error => {
+                document.getElementById('ip').textContent = 'Error fetching IP address';
+                document.getElementById('location').textContent = 'Error fetching location';
+                console.error(error);
+            });
+
+        // List of motivational quotes
+        const quotes = [
+            "Believe in yourself, and you can achieve anything.",
+            "The only limit to our realization of tomorrow is our doubts of today.",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+            "Don't watch the clock; do what it does. Keep going.",
+            "Success is the sum of small efforts, repeated day in and day out.",
+            "Believe you can and you're halfway there.",
+            "Opportunities don't happen, you create them.",
+            "Act as if what you do makes a difference. It does.",
+            "Dream it. Wish it. Do it.",
+            "It always seems impossible until it's done."
+        ];
+
+        // Display a random quote
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById('quote').textContent = `"${randomQuote}"`;
+
+        // Function to update the time in IST and UTC
+        function updateTime() {
+            const now = new Date();
+
+            // IST Time with Date and AM/PM in uppercase
+            const istTimeString = now.toLocaleString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true,
+                timeZone: 'Asia/Kolkata',
+            }).toUpperCase(); // AM/PM in caps
+            const istDateString = now.toLocaleDateString([], {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric',
+                timeZone: 'Asia/Kolkata'
+            });
+            document.getElementById('time').textContent = `${istDateString}, ${istTimeString}`;
+
+            // UTC Time with Date in MM-DD-YYYY format
+            const utcDateString = now.toLocaleDateString([], {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric',
+                timeZone: 'UTC'
+            });
+
+            const utcTimeString = now.toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true,
+                timeZone: 'UTC'
+            });
+
+            const formattedUtcTime = `${utcDateString}, ${utcTimeString}`;
+            document.getElementById('utc-time').textContent = ` ${formattedUtcTime}`;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000); // Update time every second
+        updateTime(); // Initial call to display time immediately
+		
+		// Fetch and display the dynamic domain name
+        const domainName = window.location.hostname;
+        document.getElementById('dynamic-domain').textContent = domainName;
+    </script>
+</body>
+</html>
