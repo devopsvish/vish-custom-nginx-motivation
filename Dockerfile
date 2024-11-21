@@ -2,8 +2,7 @@
 FROM alpine:latest
 
 # Install Nginx on Alpine
-RUN apk update && \
-    apk add --no-cache nginx
+RUN apk update && apk add --no-cache nginx
 
 # Create the log directory manually
 RUN mkdir -p /var/log/nginx
@@ -15,7 +14,7 @@ COPY index.html /usr/share/nginx/html/index.html
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80 to access the web server
-EXPOSE 80
+EXPOSE 5555
 
 # Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
