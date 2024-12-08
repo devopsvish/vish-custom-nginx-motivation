@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # Install Nginx on Alpine
-RUN apk update && apk add --no-cache nginx
+RUN apk update && apk add --no-cache nginx bash
 
 # Create the log directory manually
 RUN mkdir -p /var/log/nginx
