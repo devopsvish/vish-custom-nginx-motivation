@@ -9,132 +9,14 @@
         /* Body Styling */
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #a0c4ff 0%, #e0efff 100%); /* Light blue gradient */
-            color: #4b6a92; /* Light blue text */
-            text-align: center;
+            background: linear-gradient(135deg, #a0c4ff 0%, #e0efff 100%);
+            color: #4b6a92;
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: background 0.5s ease-in-out;
-        }
-
-        /* Container Styling */
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: rgba(255, 255, 255, 0.9);
-            color: #4b6a92;
-            border-radius: 22px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            padding: 60px 50px;
-            flex-grow: 1;
-            border: 2px solid #a9cbe6;
-            box-sizing: border-box;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border: 10px solid #a9cbe6; /* Lighter blue border */
-            border-radius: 15px;
-            pointer-events: none;
-        }
-
-        h1 {
-            font-size: 3em;
-            font-weight: 600;
-            color: #2d3e50;
-            margin-bottom: 30px;
-        }
-
-        #quote {
-            font-size: 1.3em;
-            font-style: italic;
-            line-height: 1.8;
-            color: #5f758c;
-            margin-bottom: 50px;
-            max-width: 700px;
-        }
-
-        /* Footer Styling */
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.85);
-            color: #4b6a92; /* Light blue text */
-            padding: 15px 20px;
-            font-size: 0.9em;
-            border-radius: 20px 20px 0 0;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-            white-space: nowrap;
-            height: auto;
-        }
-
-        footer .footer-section {
-            display: flex;
-            align-items: center;
-            margin-right: 10px; /* Reduced right margin */
-            gap: 3px; /* Reduced gap between label and value */
-        }
-
-        footer .footer-section:last-child {
-            margin-right: 0;
-        }
-
-        footer .footer-section i {
-            margin-right: 5px; /* Reduced margin for icons */
-            font-size: 1.2em;
-        }
-
-        footer .footer-section span {
-            color: #4b6a92; /* Light blue text */
-            margin-left: 0; /* Removed left margin */
-        }
-
-        footer .time {
-            font-size: 1em;
-            color: #4b6a92; /* Light blue text */
-            margin-top: 5px;
-            width: 150px;
-            text-align: center;
-        }
-
-        /* IST Time Bold */
-        .bold-ist-time {
-            font-weight: bold;
-        }
-
-        /* Domain Name Styling */
-        .domain-name {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #2d3e50;
-            font-weight: 600;
-            text-align: center;
-            padding: 10px;
-            background-color: #a0c4ff;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Navigation */
@@ -170,20 +52,61 @@
             border-bottom: 2px solid #6fa3f9;
         }
 
-        /* Side Label Styling */
-        .side-label {
-            position: fixed;
-            right: 20px;
-            top: 20px;
-            font-size: 0.8em;
-            background-color: #6fa3f9; /* Lighter blue background */
-            color: white;
-            padding: 5px 10px;
+        /* Container Styling */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            color: #4b6a92;
+            border-radius: 22px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 60px 50px;
+            flex-grow: 1;
+            border: 2px solid #a9cbe6;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 10px solid #a9cbe6;
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 3em;
             font-weight: 600;
-            text-transform: uppercase;
-            border-radius: 20px;
-            box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
-            z-index: 10;
+            color: #2d3e50;
+            margin-bottom: 30px;
+        }
+
+        .intro-content {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #5f758c;
+            margin-bottom: 50px;
+            max-width: 700px;
+        }
+
+        .intro-content p {
+            margin-bottom: 25px;
         }
 
         /* Proceed Button */
@@ -199,8 +122,6 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(111, 163, 249, 0.4);
             margin-top: 20px;
-            border: none;
-            cursor: pointer;
         }
 
         .proceed-button:hover {
@@ -209,14 +130,74 @@
             background: linear-gradient(135deg, #5a8ee8 0%, #4a7ed7 100%);
         }
 
-        /* Bold Labels Styling */
+        /* Footer Styling */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            color: #4b6a92;
+            padding: 15px 20px;
+            font-size: 0.9em;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .footer-section {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            gap: 3px;
+        }
+
+        footer .footer-section:last-child {
+            margin-right: 0;
+        }
+
         .bold-label {
             font-weight: bold;
             margin-right: 8px;
         }
 
+        .bold-ist-time {
+            font-weight: bold;
+        }
+
+        /* Side Label Styling */
+        .side-label {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            font-size: 0.8em;
+            background-color: #6fa3f9;
+            color: white;
+            padding: 5px 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 20px;
+            box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .intro-content {
+                font-size: 1.1em;
+            }
+
+            .proceed-button {
+                padding: 15px 40px;
+                font-size: 1.1em;
+            }
+
             footer {
                 flex-direction: column;
                 align-items: center;
@@ -239,49 +220,49 @@
     <!-- Side Label -->
     <div class="side-label">Vish - Cloud and DevOps Engineer</div>
 
-
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/quotes" class="active">Quotes</a></li>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/quotes">Quotes</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <h1>Vish Motivation Zone Quotes</h1>
-        <div id="quote"></div>
+        <h1>Welcome to Vish Motivation Zone</h1>
         
-        <!-- Refresh Button -->
-        <a href="/quotes" class="proceed-button" title="Get New Quote">
-            Get New Quote →
-        </a>
+        <div class="intro-content">
+            <p>
+                Your daily source of inspiration and positivity!
+            </p>
+            <p>
+                Every visit brings you a fresh motivational quote to inspire, 
+                encourage, and energize you throughout your day.
+            </p>
+        </div>
+
+        <a href="/quotes" class="proceed-button">Get Your Daily Motivation →</a>
     </div>
 
     <!-- Footer with Location, IP, IST Time, and UTC Time -->
     <footer>
         <div class="footer-section">
             <i class="fas fa-map-marker-alt"></i>
-            <span class="bold-label">Location:</span> <span id="location">Loading Location...</span>
+            <span class="bold-label">Location:</span> <span id="location">Loading...</span>
         </div>
         <div class="footer-section">
             <i class="fas fa-laptop"></i>
-            <span class="bold-label">IP Address:</span> <span id="ip">Loading IP...</span>
+            <span class="bold-label">IP Address:</span> <span id="ip">Loading...</span>
         </div>
         <div class="footer-section">
-            <span class="bold-ist-time">IST Time:</span> <span id="time">Loading Time...</span>
+            <span class="bold-ist-time">IST Time:</span> <span id="time">Loading...</span>
         </div>
         <div class="footer-section">
-            <span class="bold-ist-time">UTC Time:</span> <span id="utc-time">Loading Time...</span>
+            <span class="bold-ist-time">UTC Time:</span> <span id="utc-time">Loading...</span>
         </div>
     </footer>
-
-    <!-- Domain Name Section -->
-    <div class="domain-name" id="domain-name">
-        Domain Name: <span id="dynamic-domain">Loading Domain...</span>
-    </div>
 
     <!-- FontAwesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -293,8 +274,6 @@
             .then(data => {
                 const ip = data.ip;
                 document.getElementById('ip').textContent = ` ${ip}`;
-
-                // Fetch location details using IP
                 return fetch(`https://ipwhois.app/json/${ip}`);
             })
             .then(response => response.json())
@@ -303,41 +282,21 @@
                 document.getElementById('location').textContent = ` ${location}`;
             })
             .catch(error => {
-                document.getElementById('ip').textContent = 'Error fetching IP address';
+                document.getElementById('ip').textContent = 'Error fetching IP';
                 document.getElementById('location').textContent = 'Error fetching location';
-                console.error(error);
             });
-
-        // List of motivational quotes
-        const quotes = [
-            "Believe in yourself, and you can achieve anything.",
-            "The only limit to our realization of tomorrow is our doubts of today.",
-            "Success is not final, failure is not fatal: It is the courage to continue that counts.",
-            "Don't watch the clock; do what it does. Keep going.",
-            "Success is the sum of small efforts, repeated day in and day out.",
-            "Believe you can and you're halfway there.",
-            "Opportunities don't happen, you create them.",
-            "Act as if what you do makes a difference. It does.",
-            "Dream it. Wish it. Do it.",
-            "It always seems impossible until it's done."
-        ];
-
-        // Display a random quote
-        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        document.getElementById('quote').textContent = `"${randomQuote}"`;
 
         // Function to update the time in IST and UTC
         function updateTime() {
             const now = new Date();
 
-            // IST Time with Date and AM/PM in uppercase
             const istTimeString = now.toLocaleString([], {
                 hour: '2-digit',
                 minute: '2-digit',
                 second: '2-digit',
                 hour12: true,
                 timeZone: 'Asia/Kolkata',
-            }).toUpperCase(); // AM/PM in caps
+            }).toUpperCase();
             const istDateString = now.toLocaleDateString([], {
                 month: '2-digit',
                 day: '2-digit',
@@ -346,14 +305,12 @@
             });
             document.getElementById('time').textContent = `${istDateString}, ${istTimeString}`;
 
-            // UTC Time with Date in MM-DD-YYYY format
             const utcDateString = now.toLocaleDateString([], {
                 month: '2-digit',
                 day: '2-digit',
                 year: 'numeric',
                 timeZone: 'UTC'
             });
-
             const utcTimeString = now.toLocaleTimeString([], {
                 hour: '2-digit',
                 minute: '2-digit',
@@ -361,19 +318,12 @@
                 hour12: true,
                 timeZone: 'UTC'
             });
-
             const formattedUtcTime = `${utcDateString}, ${utcTimeString}`;
             document.getElementById('utc-time').textContent = ` ${formattedUtcTime}`;
         }
 
-        // Update time every second
-        setInterval(updateTime, 1000); // Update time every second
-        updateTime(); // Initial call to display time immediately
-		
-		// Fetch and display the dynamic domain name
-        const domainName = window.location.hostname || 'localhost';
-        document.getElementById('dynamic-domain').textContent = domainName;
-        document.getElementById('domain-label').textContent = domainName;
+        setInterval(updateTime, 1000);
+        updateTime();
     </script>
 </body>
 </html>

@@ -7,13 +7,13 @@ RUN apk update && apk add --no-cache nginx bash
 # Create the log directory manually
 RUN mkdir -p /var/log/nginx
 
-# Copy your custom index.html to the Nginx default HTML directory
-COPY index.html /usr/share/nginx/html/index.html
+# Copy all HTML files to the Nginx default HTML directory
+COPY *.html /usr/share/nginx/html/
 
 # Copy nginx conf to the Nginx default conf directory
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port 80 to access the web server
+# Expose port 5555 to access the web server
 EXPOSE 5555
 
 # Start Nginx in the foreground

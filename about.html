@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Vish Motivation Zone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a0c4ff 0%, #e0efff 100%);
+            color: #4b6a92;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #4b6a92;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #2d3e50;
+        }
+
+        nav a.active {
+            color: #2d3e50;
+            font-weight: 600;
+            border-bottom: 2px solid #6fa3f9;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 900px;
+            margin: 15px auto;
+            background: rgba(255, 255, 255, 0.9);
+            color: #4b6a92;
+            border-radius: 22px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 25px 40px;
+            flex-grow: 1;
+            border: 2px solid #a9cbe6;
+            box-sizing: border-box;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 10px solid #a9cbe6;
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 2.3em;
+            font-weight: 600;
+            color: #2d3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            color: #2d3e50;
+            margin-top: 18px;
+            margin-bottom: 12px;
+        }
+
+        .about-content {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #5f758c;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+        }
+
+        .profile-section {
+            background: linear-gradient(135deg, #a0c4ff 0%, #c5dff8 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #6fa3f9;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 12px;
+            margin: 15px 0;
+            grid-auto-rows: 1fr;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 15px 18px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid #a9cbe6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-item strong {
+            color: #2d3e50;
+            font-size: 1.05em;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .skill-item p {
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-section h2 {
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        /* Footer Styling */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            color: #4b6a92;
+            padding: 15px 20px;
+            font-size: 0.9em;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .footer-section {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            gap: 3px;
+        }
+
+        footer .footer-section:last-child {
+            margin-right: 0;
+        }
+
+        .bold-label {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .bold-ist-time {
+            font-weight: bold;
+        }
+
+        /* Side Label Styling */
+        .side-label {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            font-size: 0.8em;
+            background-color: #6fa3f9;
+            color: white;
+            padding: 5px 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 20px;
+            box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+                font-size: 1em;
+                padding: 20px;
+            }
+
+            footer .footer-section {
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Side Label -->
+    <div class="side-label">Vish - Cloud and DevOps Engineer</div>
+
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/quotes">Quotes</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>About Vish</h1>
+        
+        <div class="about-content">
+            <div class="profile-section">
+                <h2>👨‍💻 Professional Background</h2>
+                <p>
+                    Hello! I'm Vish, a passionate Cloud and DevOps Engineer dedicated to building robust, 
+                    scalable, and efficient infrastructure solutions. With expertise in cloud 
+                    technologies, automation, and continuous integration/deployment, I help 
+                    organizations streamline their development and operations workflows.
+                </p>
+            </div>
+
+            <h2>🔧 Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <strong>Cloud Platform</strong>
+                    <p>AWS</p>
+                </div>
+                <div class="skill-item">
+                    <strong>Containerization</strong>
+                    <p>Docker, Kubernetes</p>
+                </div>
+                <div class="skill-item">
+                    <strong>CI/CD</strong>
+                    <p>GitLab CI, GitHub Actions</p>
+                </div>
+                <div class="skill-item">
+                    <strong>Infrastructure as Code</strong>
+                    <p>Terraform, Ansible</p>
+                </div>
+                <div class="skill-item">
+                    <strong>Monitoring & Logging</strong>
+                    <p>Prometheus, Grafana</p>
+                </div>
+                <div class="skill-item">
+                    <strong>Programming</strong>
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <strong>Web Servers</strong>
+                    <p>Nginx, Apache</p>
+                </div>
+                <div class="skill-item">
+                    <strong>Certifications</strong>
+                    <p>Terraform & CKA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer with Location, IP, IST Time, and UTC Time -->
+    <footer>
+        <div class="footer-section">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="bold-label">Location:</span> <span id="location">Loading...</span>
+        </div>
+        <div class="footer-section">
+            <i class="fas fa-laptop"></i>
+            <span class="bold-label">IP Address:</span> <span id="ip">Loading...</span>
+        </div>
+        <div class="footer-section">
+            <span class="bold-ist-time">IST Time:</span> <span id="time">Loading...</span>
+        </div>
+        <div class="footer-section">
+            <span class="bold-ist-time">UTC Time:</span> <span id="utc-time">Loading...</span>
+        </div>
+    </footer>
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        // Fetch IP address and location
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ip = data.ip;
+                document.getElementById('ip').textContent = ` ${ip}`;
+                return fetch(`https://ipwhois.app/json/${ip}`);
+            })
+            .then(response => response.json())
+            .then(data => {
+                const location = `${data.city}, ${data.region}, ${data.country}`;
+                document.getElementById('location').textContent = ` ${location}`;
+            })
+            .catch(error => {
+                document.getElementById('ip').textContent = 'Error fetching IP';
+                document.getElementById('location').textContent = 'Error fetching location';
+            });
+
+        // Function to update the time in IST and UTC
+        function updateTime() {
+            const now = new Date();
+
+            const istTimeString = now.toLocaleString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true,
+                timeZone: 'Asia/Kolkata',
+            }).toUpperCase();
+            const istDateString = now.toLocaleDateString([], {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric',
+                timeZone: 'Asia/Kolkata'
+            });
+            document.getElementById('time').textContent = `${istDateString}, ${istTimeString}`;
+
+            const utcDateString = now.toLocaleDateString([], {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric',
+                timeZone: 'UTC'
+            });
+            const utcTimeString = now.toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true,
+                timeZone: 'UTC'
+            });
+            const formattedUtcTime = `${utcDateString}, ${utcTimeString}`;
+            document.getElementById('utc-time').textContent = ` ${formattedUtcTime}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+
+    </script>
+</body>
+</html>
